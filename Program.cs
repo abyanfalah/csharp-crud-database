@@ -30,9 +30,10 @@ internal class Program
 		cmd.CommandText = "SELECT * FROM coba";
 		MySqlDataReader reader = cmd.ExecuteReader();
 
+		Console.WriteLine($"{reader.GetName(0),-4} {reader.GetName(1),-4}");
 		while (reader.Read())
 		{
-			Console.WriteLine($"{reader.GetString(0)} {reader.GetInt16(1)}");
+			Console.WriteLine($"{reader.GetString(0),-4} {reader.GetInt16(1),-4}");
 		}
 	}
 
@@ -41,9 +42,10 @@ internal class Program
 		cmd.CommandText = $"SELECT * FROM coba WHERE name like '%{name}%'";
 		MySqlDataReader reader = cmd.ExecuteReader();
 
+		Console.WriteLine($"{reader.GetName(0),-4} {reader.GetName(1),-4}");
 		while (reader.Read())
 		{
-			Console.WriteLine($"{reader.GetString(0)} {reader.GetInt16(1)}");
+			Console.WriteLine($"{reader.GetString(0),-4} {reader.GetInt16(1),-4}");
 		}
 	}
 
